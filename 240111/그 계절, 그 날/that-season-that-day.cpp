@@ -8,7 +8,7 @@ string Season(int year, int month, int day)
     bool leapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 
     if ((leapYear && month == 2 && day > 29)
-        && (!leapYear && month == 2 && day > 28))
+        || (!leapYear && month == 2 && day > 28))
     {
         return "-1";
     }

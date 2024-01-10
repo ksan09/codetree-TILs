@@ -23,6 +23,8 @@ string Season(int year, int month, int day)
     {
         return "-1";
     }
+    else if (month > 12 || month < 0 || day < 0)
+        return "-1";
 
     if (month >= 3 && month <= 5)
         return "Spring";

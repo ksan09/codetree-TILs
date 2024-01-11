@@ -11,7 +11,7 @@ bool Compare(const pair<pair<int, int>, int>& a, const pair<pair<int, int>, int>
         return CpVal;
     else if (a.first.first > b.first.first)
         return !CpVal;
-    else if (a.first.second < b.first.second)
+    else if (a.first.second > b.first.second)
         return CpVal;
 
     return !CpVal;

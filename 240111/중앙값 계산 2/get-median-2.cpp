@@ -17,7 +17,7 @@ int main() {
 
     for(int i = 0; i < n; ++i)
     {
-        if(arr[i] % 2 == 1)
+        if(i % 2 == 1)
             cout << arr[i / 2] << ' ';
     }
 

@@ -11,12 +11,18 @@ int main() {
     for(int i = 1; i <= n; ++i)
     {
         cin >> arr[i];
+        
+    }
+
+    sort(arr + 1, arr + n); 
+
+    for(int i = 1; i <= n; ++i)
+    {
         if(i % 2 == 1)
         {
-            sort(arr, arr + i); 
             cout << arr[i / 2 + 1] << ' ';
         }
-    }
+    } 
 
     return 0;
 }

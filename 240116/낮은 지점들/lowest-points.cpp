@@ -3,11 +3,11 @@
 using namespace std;
 
 int main() {
-    unordered_map<long, long> m;
+    unordered_map<long long, long long> m;
     int n;
     cin >> n;
 
-    long key, value;
+    long long key, value;
     for (int i = 0; i < 5; ++i)
     {
         cin >> key >> value;

@@ -24,7 +24,7 @@ int main() {
         }
     }
 
-    int ans = 0;
+    long long ans = 0;
     for (auto pair : m)
     {
         ans += pair.second;

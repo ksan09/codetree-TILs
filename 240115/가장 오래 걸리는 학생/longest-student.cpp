@@ -1,12 +1,14 @@
 #include <iostream>
+#include <unordered_map>
+#include <map>
 #include <vector>
 #include <tuple>
 using namespace std;
 
 int n, m;
-int graph[101][101]; // ? - ? 거리
-bool visited[101]; // 
-int dist[101]; // 시작 - 끝 거리
+map <pair<int, int>, int> info;
+bool visited[100001]; // 
+int dist[100001]; // 시작 - 끝 거리
 
 // ? ~ n 까지의 거리
 int main() {
@@ -16,8 +18,9 @@ int main() {
     {
         int x, y, d;
         cin >> x >> y >> d;
-        graph[x][y] = d;
-        graph[y][x] = d;
+
+        info.insert({ {x, y}, d });
+        info.insert({ {y, x}, d });
     }
 
     // dist 셋팅
@@ -39,8 +42,8 @@ int main() {
         // 최소값 정점과 연결된 정점들이 최소값 정점을 거쳐서 시작점으로 가는 거리값 갱신
         for (int j = n; j >= 1; j--) {
             // 간선이 존재하지 않는 경우에는 넘어갑니다.
-            if (graph[min_index][j] == 0) continue;
-            dist[j] = min(dist[j], dist[min_index] + graph[min_index][j]);
+            if (info.find({min_index, j}) == info.end()) continue;
+            dist[j] = min(dist[j], dist[min_index] + info[{min_index, j}]);
         }
     }
 
